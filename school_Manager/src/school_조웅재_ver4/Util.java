@@ -8,8 +8,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Util {
-	
-	private static final String CUR_PATH = System.getProperty("user.dir")+"/src/"+new Util().getClass().getPackageName()+"/";
+	private static final String CUR_PATH = System.getProperty("user.dir")+"\\src\\"+new Util().getClass().getPackageName()+"\\";
+	//private static final String CUR_PATH = System.getProperty("user.dir")+"/src/"+new Util().getClass().getPackageName()+"/";
 	private static Scanner scan = new Scanner(System.in);
 	
 	private static Util instance = new Util();
