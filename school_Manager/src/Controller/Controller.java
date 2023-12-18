@@ -2,6 +2,7 @@ package Controller;
 
 import DAO.StudentDAO;
 import DAO.SubjectDAO;
+import Utils.FileManager;
 import Utils.Util;
 
 public class Controller {
@@ -12,11 +13,13 @@ public class Controller {
 	
 	private StudentDAO stuDAO;
 	private SubjectDAO subDAO;
+	private FileManager fm;
 	
 	private void init() {
 		stuDAO = new StudentDAO();
 		subDAO = new SubjectDAO();
-		Util.loadToFile(stuDAO, subDAO);
+		fm = new FileManager();
+		fm.loadToFile(stuDAO, subDAO);
 	}
 
 
@@ -58,10 +61,10 @@ public class Controller {
 				subDAO.printOneSubject(stuDAO);
 			} else if(sel==7) {	
 				System.out.println("[ 파일 저장 ]");
-				Util.saveToFile(stuDAO,subDAO);
+				fm.saveToFile(stuDAO, subDAO);
 			} else if(sel==8) {	
 				System.out.println("[ 파일 로드 ]");
-				Util.loadToFile(stuDAO,subDAO);
+				fm.loadToFile(stuDAO,subDAO);
 			} else if(sel==0) {
 				System.out.println("[ 종료 ]");
 				return;
